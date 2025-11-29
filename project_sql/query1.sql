@@ -1,4 +1,8 @@
-SELECT * 
+SELECT COUNT(*)
 FROM staging_spotify_raw
-WHERE artist_name = 'Foo Fighters'
-LIMIT 100
+
+SELECT COUNT(*)
+FROM staging_spotify_2009_to_2023
+
+SELECT COUNT(*)
+FROM staging_spotify_2025
