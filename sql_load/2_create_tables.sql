@@ -60,59 +60,69 @@ CREATE TABLE staging_spotify_raw (
 
 -- Create relational tables --
 
--- Create artists_dim table with primary key
-CREATE TABLE public.artists_dim
+-- Create artists table with primary key
+CREATE TABLE public.artists
 (
-    artist_id INT PRIMARY KEY,
+    artist_key INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    artist_id VARCHAR(50), -- original spotify id
     artist_name TEXT,
-    CAST(artist_popularity AS INT),
-    CAST(artist_followers AS INT),
-)
+    artist_popularity FLOAT,
+    artist_followers FLOAT
+);
 
--- Create genres_dim table with primary key
-CREATE TABLE public.genres_dim
+-- Create genres table with primary key
+CREATE TABLE public.genres
 (
-    genre_id INT PRIMARY KEY,
+    genre_key INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
     genre_name VARCHAR(255)
-)
+);
 
--- Create albums_dim table with primary key
-CREATE TABLE public.albums_dim
+-- Create albums table with primary key
+CREATE TABLE public.albums
 (
-    album_id INT PRIMARY KEY, -- original spotify id
-    artist_id INT,
+    album_key INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    album_id VARCHAR(50), -- original spotify id
+    artist_key INT,
     album_name VARCHAR(255),
     album_release_date DATE,
     album_total_tracks INT,
     album_type VARCHAR(255),
-    FOREIGN KEY (artist_id) REFERENCES public.artists_dim (artist_id)
-)
+    FOREIGN KEY (artist_key) REFERENCES public.artists (artist_key)
+);
 
--- Create tracks_dim table with primary key
-CREATE TABLE public.tracks_dim
+-- Create tracks table with primary key
+CREATE TABLE public.tracks
 (
-    track_id INT PRIMARY KEY,
+    track_key INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    track_id VARCHAR(50), -- original spotify id
+    album_key INT,
     track_name VARCHAR(255),
     track_number INT,
     track_popularity INT,
     track_duration_min FLOAT,
     is_explicit BOOLEAN,
-)
+    FOREIGN KEY (album_key) REFERENCES public.albums (album_key)
+);
 
-
-
-
--- Create artist_genre_dim table with composite primary and foreign keys
-CREATE TABLE public.artist_genre_dim
+-- Create artist_genre table with composite primary and foreign keys
+CREATE TABLE public.artist_genre
 (
-    artist_id INT,
-    track_id VARCHAR(50), -- original spotify id
-    album_id INT,
-    genre_id INT,
-    PRIMARY KEY (artist_id, genre_id),
-    FOREIGN KEY (artist_id) REFERENCES public.artists_dim (artist_id),
-    FOREIGN KEY (genre_id) REFERENCES public.genres_dim (genre_id),
-)
+    artist_key INT,
+    genre_key INT,
+    PRIMARY KEY (artist_key, genre_key),
+    FOREIGN KEY (artist_key) REFERENCES public.artists (artist_key),
+    FOREIGN KEY (genre_key) REFERENCES public.genres (genre_key)
+);
 
+-- Set ownership of the tables to the postgres user
+ALTER TABLE public.artists OWNER to postgres;
+ALTER TABLE public.genres OWNER to postgres;
+ALTER TABLE public.albums OWNER to postgres;
+ALTER TABLE public.tracks OWNER to postgres;
+ALTER TABLE public.artist_genre OWNER to postgres;
 
-CREATE INDEX idx_
+-- Create indexes on foreign key columns for better performance
+CREATE INDEX idx_artist_key ON public.artists (artist_key);
+CREATE INDEX idx_genre_key ON public.genres (genre_key);
+CREATE INDEX idx_album_key ON public.albums (album_key);
+CREATE INDEX idx_track_key ON public.tracks (track_key);
