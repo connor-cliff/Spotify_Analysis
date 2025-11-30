@@ -85,3 +85,10 @@ SELECT
     album_type,
     '2025'
 FROM staging_spotify_2025;
+
+-- rename spotify id columns for clarity
+ALTER TABLE staging_spotify_raw
+RENAME COLUMN track_id to track_key
+
+ALTER TABLE staging_spotify_raw
+RENAME COLUMN album_id to album_key
