@@ -86,9 +86,14 @@ SELECT
     '2025'
 FROM staging_spotify_2025;
 
+-- Alter remove trailing 0's from columns and change type to integer
+ALTER TABLE public.artists
+ALTER COLUMN artist_popularity TYPE INT;
 
-ALTER TABLE artist
-ALTER COLUMN artist_popularity FLOAT
+ALTER TABLE public.artists
+ALTER COLUMN artist_followers TYPE INT;
 
-ALTER TABLE artist
-ALTER COLUMN artist_followers FLOAT
+-- Move staging tables to staging schema
+ALTER TABLE public.staging_spotify_2009_to_2023 SET SCHEMA staging;
+ALTER TABLE public.staging_spotify_2025 SET SCHEMA staging;
+ALTER TABLE public.staging_spotify_raw SET SCHEMA staging;
