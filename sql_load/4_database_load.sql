@@ -34,3 +34,9 @@ SELECT
     CAST(track_duration_min AS FLOAT), 
     CAST(is_explicit AS BOOLEAN)
 FROM staging.staging_spotify_raw;
+
+-- Add foreign keys to tables
+ALTER TABLE albums
+ADD CONSTRAINT fk_artists
+FOREIGN KEY (artist_key) 
+REFERENCES public.artists (artist_key);
