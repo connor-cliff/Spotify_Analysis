@@ -97,3 +97,5 @@ ALTER COLUMN artist_followers TYPE INT;
 ALTER TABLE public.staging_spotify_2009_to_2023 SET SCHEMA staging;
 ALTER TABLE public.staging_spotify_2025 SET SCHEMA staging;
 ALTER TABLE public.staging_spotify_raw SET SCHEMA staging;
+
+-- Reset table auto-increment counter to start at 1

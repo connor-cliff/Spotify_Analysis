@@ -1,7 +1,6 @@
 SELECT *
-FROM staging_spotify_raw
-WHERE album_name = 'DAMN.'
-ORDER BY track_number ASC
+FROM staging.staging_spotify_raw
+limit 100
 
 SELECT * 
 FROM INFORMATION_SCHEMA.COLUMNS
@@ -15,3 +14,7 @@ FROM staging_spotify_2009_to_2023
 
 SELECT COUNT(*)
 FROM staging_spotify_2025
+
+select * 
+from albums
+limit 100

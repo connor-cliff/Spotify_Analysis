@@ -64,7 +64,6 @@ CREATE TABLE staging_spotify_raw (
 CREATE TABLE public.artists
 (
     artist_key INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-    artist_id VARCHAR(50), -- original spotify id
     artist_name TEXT,
     artist_popularity FLOAT,
     artist_followers FLOAT
