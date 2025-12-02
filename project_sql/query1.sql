@@ -15,6 +15,6 @@ FROM staging_spotify_2009_to_2023
 SELECT COUNT(*)
 FROM staging_spotify_2025
 
-select * 
-from albums
+select *
+from genres
 limit 100

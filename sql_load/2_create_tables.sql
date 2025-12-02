@@ -63,54 +63,71 @@ CREATE TABLE staging_spotify_raw (
 -- Create artists table with primary key
 CREATE TABLE public.artists
 (
-    artist_key INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    artist_key INT GENERATED ALWAYS AS IDENTITY,
     artist_name TEXT,
     artist_popularity FLOAT,
-    artist_followers FLOAT
+    artist_followers FLOAT,
+    PRIMARY KEY(artist_key)
 );
 
--- Create genres table with primary key
-CREATE TABLE public.genres
-(
-    genre_key INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-    genre_name VARCHAR(255)
-);
-
--- Create albums table with primary key
+-- Create albums table with primary key and foreing key
 CREATE TABLE public.albums
 (
-    album_key INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    album_key INT GENERATED ALWAYS AS IDENTITY,
     album_id VARCHAR(50), -- original spotify id
-    artist_key INT,
+    artist_key INT NOT NULL,
     album_name VARCHAR(255),
     album_release_date DATE,
     album_total_tracks INT,
     album_type VARCHAR(255),
-    FOREIGN KEY (artist_key) REFERENCES public.artists (artist_key)
+    PRIMARY KEY(album_key),
+    CONSTRAINT fk_artist
+        FOREIGN KEY (artist_key) 
+            REFERENCES public.artists(artist_key)
 );
 
--- Create tracks table with primary key
+
+-- Create tracks table with primary key and foreign key
+DROP TABLE IF EXISTS tracks;
 CREATE TABLE public.tracks
 (
-    track_key INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    track_key INT GENERATED ALWAYS AS IDENTITY,
     track_id VARCHAR(50), -- original spotify id
-    album_key INT,
+    album_key INT NOT NULL,
     track_name VARCHAR(255),
     track_number INT,
     track_popularity INT,
     track_duration_min FLOAT,
     is_explicit BOOLEAN,
-    FOREIGN KEY (album_key) REFERENCES public.albums (album_key)
+    PRIMARY KEY(track_key),
+    CONSTRAINT fk_album
+        FOREIGN KEY (album_key) 
+            REFERENCES public.albums (album_key)
+);
+
+
+-- Create genres table with primary key
+DROP TABLE IF EXISTS genres;
+CREATE TABLE public.genres
+(
+    genre_key INT GENERATED ALWAYS AS IDENTITY,
+    genre_name VARCHAR(255),
+    PRIMARY KEY(genre_key)
 );
 
 -- Create artist_genre table with composite primary and foreign keys
+DROP TABLE IF EXISTS artist_genre;
 CREATE TABLE public.artist_genre
 (
     artist_key INT,
     genre_key INT,
     PRIMARY KEY (artist_key, genre_key),
-    FOREIGN KEY (artist_key) REFERENCES public.artists (artist_key),
-    FOREIGN KEY (genre_key) REFERENCES public.genres (genre_key)
+    CONSTRAINT fk_artist
+        FOREIGN KEY (artist_key) 
+            REFERENCES public.artists (artist_key),
+    CONSTRAINT fk_genre
+        FOREIGN KEY (genre_key) 
+            REFERENCES public.genres (genre_key)
 );
 
 -- Set ownership of the tables to the postgres user
