@@ -121,7 +121,8 @@ CREATE TABLE public.artist_genre
 (
     artist_key INT,
     genre_key INT,
-    PRIMARY KEY (artist_key, genre_key),
+    CONSTRAINT pk_artist_genre
+        PRIMARY KEY (artist_key, genre_key),
     CONSTRAINT fk_artist
         FOREIGN KEY (artist_key) 
             REFERENCES public.artists (artist_key),

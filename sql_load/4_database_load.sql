@@ -40,12 +40,19 @@ INSERT INTO genres (genre_name)
 SELECT DISTINCT
     artist_genres
 FROM staging.staging_spotify_raw;
-
--- Load keys in artist_genre bridge table
+ 
+-- Load keys in artist_genre bridge table using a subquery of exploded genres
 INSERT INTO artist_genre (artist_key, genre_key)
-SELECT
-    artist_key,
-    genre_key
-FROM artists
-INNER JOIN public.artists a 
-    ON 
+SELECT DISTINCT
+    a.artist_key,
+    g.genre_key
+FROM (
+    SELECT 
+        artist_name,
+        unnest(string_to_array(artist_genres, ',')) AS genre
+    FROM staging.staging_spotify_raw
+) x
+JOIN public.artists a 
+    ON x.artist_name = a.artist_name
+JOIN public.genres g 
+    ON x.genre = g.genre_name;
