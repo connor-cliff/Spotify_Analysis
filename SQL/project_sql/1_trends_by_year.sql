@@ -1,1 +1,0 @@
--- use a case when for popularity? eg. popular, normal, unpopular etc
