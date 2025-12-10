@@ -1,0 +1,1 @@
+-- artists with high followers and high popularity rating 

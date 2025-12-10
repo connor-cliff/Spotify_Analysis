@@ -1,6 +1,5 @@
 SELECT *
 FROM staging.staging_spotify_raw
-where artist_name = 'Miss Li'
 limit 100
 
 SELECT * 
