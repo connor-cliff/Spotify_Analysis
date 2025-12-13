@@ -22,4 +22,4 @@ GROUP BY
 ORDER BY
     artist_popularity DESC
 LIMIT   
-    10
+    10 
