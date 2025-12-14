@@ -9,17 +9,15 @@
 SELECT 
     MAX(artist_key) AS max_artist_key,
     artist_name,
-    AVG(artist_popularity) AS average_artist_popularity
-    -- AVG(artist_followers) AS artist_followers 
+    AVG(artist_popularity) AS average_artist_popularity,
+    AVG(artist_followers) AS artist_followers 
 FROM  
     artists
 WHERE
     artist_name IS NOT NULL
 GROUP BY
-    artist_key, -- adding key to groupby returns multiple of the same artist?
-    artist_name,
-    artist_popularity
+    artist_name
 ORDER BY
-    artist_popularity DESC
+    average_artist_popularity DESC
 LIMIT   
     10 
