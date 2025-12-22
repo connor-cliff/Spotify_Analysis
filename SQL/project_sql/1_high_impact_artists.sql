@@ -29,4 +29,4 @@ WHERE rn = 1
 ORDER BY
     artist_popularity DESC,
     artist_followers DESC
-LIMIT 10;
+LIMIT 10; 
