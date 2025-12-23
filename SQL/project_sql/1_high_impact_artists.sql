@@ -1,10 +1,13 @@
 /* Identify the artist with the biggest impact: those with the highest artists popularity score and most followers.
 
-The dataset used in this analysis lacked a unique id for artists so they were given a surrogate key based on there name.
-This resulted in there being multiple artist with the same name and different popularity and follower value which is 
-likely due to this dataset being from 2009-2025 so these different values represent the artists stats over this time period.
+This analysis helps to highlight the artist with the greatest influence in the dataset. These are the artists who
+drive trends and haev the broadest audience reach.
 
-This query uses a windows function to return the artist row which represents the best version of that artist.
+Limitation: The dataset used in this analysis lacked a unique ID for artists. This resulted in there being multiple artists 
+with the same name and different popularity and follower value which is likely due to this dataset being from 2009-2025 so 
+these different values represent the artists stats over this time period. To get around this, artists were given a surrogate 
+key based on there name. This causes artist with the same name to be grouped together but for the sake of this exercise there
+wasn't another choice given the dataset used.
 */
 
 SELECT

@@ -1,6 +1,7 @@
 /* Return the track(s) with the highest popularity for each year. 
 
-This analysis identifies which track reached the highest popularity score for each given year. 
+This analysis identifies yearly trends in the music industry which can be used to provide
+insight into popularity patterns and help predict what will be populary in the future.
 
 Firstly, tracks are unduplicated to account for multiple entries which have the same names. 
 From this set, the maximum popularity per year is calculated and joined back to return the
