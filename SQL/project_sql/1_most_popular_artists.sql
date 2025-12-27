@@ -27,3 +27,59 @@ ORDER BY
     average_artist_popularity DESC
 LIMIT   
     10 
+
+/*
+Results:
+[
+  {
+    "max_artist_key": 55090,
+    "artist_name": "Taylor Swift",
+    "average_artist_popularity": 100
+  },
+  {
+    "max_artist_key": 53592,
+    "artist_name": "Drake",
+    "average_artist_popularity": 95
+  },
+  {
+    "max_artist_key": 55129,
+    "artist_name": "Bad Bunny",
+    "average_artist_popularity": 95
+  },
+  {
+    "max_artist_key": 55848,
+    "artist_name": "The Weeknd",
+    "average_artist_popularity": 94
+  },
+  {
+    "max_artist_key": 55459,
+    "artist_name": "Justin Bieber",
+    "average_artist_popularity": 91
+  },
+  {
+    "max_artist_key": 54833,
+    "artist_name": "Sabrina Carpenter",
+    "average_artist_popularity": 91
+  },
+  {
+    "max_artist_key": 54433,
+    "artist_name": "Rihanna",
+    "average_artist_popularity": 90
+  },
+  {
+    "max_artist_key": 55910,
+    "artist_name": "Billie Eilish",
+    "average_artist_popularity": 90
+  },
+  {
+    "max_artist_key": 54931,
+    "artist_name": "Bruno Mars",
+    "average_artist_popularity": 90
+  },
+  {
+    "max_artist_key": 55685,
+    "artist_name": "Ariana Grande",
+    "average_artist_popularity": 90
+  }
+]
+*/

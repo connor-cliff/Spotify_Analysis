@@ -37,3 +37,69 @@ ORDER BY
     artist_popularity DESC,
     artist_followers DESC
 LIMIT 10; 
+
+/*
+Results:
+[
+  {
+    "artist_key": 53437,
+    "artist_name": "Taylor Swift",
+    "artist_popularity": 100,
+    "artist_followers": 145542136
+  },
+  {
+    "artist_key": 52877,
+    "artist_name": "Drake",
+    "artist_popularity": 95,
+    "artist_followers": 103126025
+  },
+  {
+    "artist_key": 53317,
+    "artist_name": "Bad Bunny",
+    "artist_popularity": 95,
+    "artist_followers": 102610644
+  },
+  {
+    "artist_key": 55160,
+    "artist_name": "The Weeknd",
+    "artist_popularity": 94,
+    "artist_followers": 113039308
+  },
+  {
+    "artist_key": 55459,
+    "artist_name": "Justin Bieber",
+    "artist_popularity": 91,
+    "artist_followers": 85050158
+  },
+  {
+    "artist_key": 54833,
+    "artist_name": "Sabrina Carpenter",
+    "artist_popularity": 91,
+    "artist_followers": 26559943
+  },
+  {
+    "artist_key": 53560,
+    "artist_name": "Billie Eilish",
+    "artist_popularity": 90,
+    "artist_followers": 118797451
+  },
+  {
+    "artist_key": 54708,
+    "artist_name": "Ariana Grande",
+    "artist_popularity": 90,
+    "artist_followers": 107418606
+  },
+  {
+    "artist_key": 54798,
+    "artist_name": "Bruno Mars",
+    "artist_popularity": 90,
+    "artist_followers": 75513910
+  },
+  {
+    "artist_key": 54433,
+    "artist_name": "Rihanna",
+    "artist_popularity": 90,
+    "artist_followers": 69050055
+  }
+]
+*/

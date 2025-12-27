@@ -22,3 +22,19 @@ FROM
     tracks
 GROUP BY 
     feature_status;
+
+/*
+Results:
+[
+  {
+    "feature_status": "Has Feature",
+    "avg_popularity": "59.3798213721150806",
+    "track_count": "50608"
+  },
+  {
+    "feature_status": "No Feature",
+    "avg_popularity": "53.4730200824213449",
+    "track_count": "642552"
+  }
+]
+*/
