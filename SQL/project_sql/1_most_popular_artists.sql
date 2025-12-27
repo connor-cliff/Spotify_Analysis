@@ -29,6 +29,10 @@ LIMIT
     10 
 
 /*
+Summary:
+The top 10 most popular artists in the dataset, based on average artist popularity, are dominated by mainstream pop and hip-hop performers. 
+Taylor Swift ranks highest with a perfect popularity score of 100, followed closely by Drake and Bad Bunny at 95.
+
 Results:
 [
   {

@@ -44,6 +44,11 @@ ORDER BY u.album_year DESC
 LIMIT 100;
 
 /*
+Summary:
+The data reveals trends in popularity across eras, with peaks often associated with globally recognised artists 
+and culturally significant songs. Multiple tracks with the same name appear in some years, reflecting either 
+repeated titles by different artists, remastered versions of older songs or the same song popular across multiple years.
+
 Results:
 [
   {

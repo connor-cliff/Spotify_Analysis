@@ -26,6 +26,10 @@ ORDER BY
 LIMIT 10;
 
 /*
+Summary:
+The top 10 most followed artists in the dataset are largely global pop and hip-hop stars with massive audience reach. 
+Taylor Swift leads with over 145 million followers, followed by Ed Sheeran with ~123M and Billie Eilish with ~119M.
+
 Results:
 [
   {

@@ -39,6 +39,14 @@ ORDER BY
 LIMIT 10; 
 
 /*
+Summary:
+The top 10 artists with the greatest overall impact in the dataset, considering both popularity and followers, 
+include globally recognized pop and hip-hop stars. Taylor Swift ranks first with a perfect popularity score of 
+100 and over 145 million followers.
+
+This analysis highlights artists who not only achieve high popularity for their tracks but also maintain large, 
+engaged audiences, demonstrating their influence in driving trends across the dataset.
+
 Results:
 [
   {

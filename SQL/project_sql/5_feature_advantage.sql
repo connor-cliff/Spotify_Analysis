@@ -24,6 +24,11 @@ GROUP BY
     feature_status;
 
 /*
+Summary:
+Tracks that include a featured artist have a higher average popularity (~59.38) compared to tracks without a feature (~53.47).
+While featured tracks account for a smaller portion of the dataset (~50,600 tracks vs ~642,500 tracks without features), 
+the analysis suggests that collaborations tend to perform better in terms of popularity.
+
 Results:
 [
   {
