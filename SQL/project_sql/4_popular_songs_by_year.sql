@@ -1,4 +1,5 @@
-/* Return the track(s) with the highest popularity for each year. 
+/* 
+Task: Return the track(s) with the highest popularity for each year. 
 
 This analysis identifies yearly trends in the music industry which can be used to provide
 insight into popularity patterns and help predict what will be populary in the future.

@@ -1,1 +1,0 @@
--- Genre performance ranking (average track popularity per genre)

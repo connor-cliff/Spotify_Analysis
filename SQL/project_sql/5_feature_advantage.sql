@@ -1,0 +1,24 @@
+/*
+Task: Determine if tracks that have a featured artist have a higher popularity score on average.
+
+This analysis compares the average popularity of tracks that feature additional artists 
+(ft. or feat. in the track name) versus tracks without features. It provides insight into 
+whether collaborations tend to perform better in terms of popularity.
+
+Limitation: The analysis relies solely on the track name to identify features, which may miss 
+some collaborations if they are not formatted consistently. Case variations are accounted for 
+using case-insensitive matching.
+*/
+
+SELECT
+    CASE 
+        WHEN track_name ILIKE '%ft.%' OR track_name ILIKE '%feat.%' OR
+             track_name ILIKE '%Ft.%' OR track_name ILIKE '%Feat.%' THEN 'Has Feature'
+        ELSE 'No Feature'
+    END AS feature_status,
+    AVG(track_popularity) AS avg_popularity,
+    COUNT(*) AS track_count
+FROM 
+    tracks
+GROUP BY 
+    feature_status;

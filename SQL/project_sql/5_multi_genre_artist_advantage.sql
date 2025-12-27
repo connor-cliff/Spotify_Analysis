@@ -1,1 +1,0 @@
--- count the number of unique genres per artist and compare against artist populary. This gives insight into whether focusing on one genre or beneficial or having many genres dilutes the fanbase.
