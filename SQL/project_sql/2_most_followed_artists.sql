@@ -14,7 +14,6 @@ method may group different artists who share the same name, which can skew resul
 SELECT
     MAX(artist_key) AS artist_key,
     artist_name,
-    MAX(artist_popularity) AS max_artist_popularity,
     MAX(artist_followers) AS max_artist_followers
 FROM 
     artists
@@ -23,5 +22,5 @@ WHERE
 GROUP BY 
     artist_name
 ORDER BY 
-    max_artist_followers DESC, max_artist_popularity DESC
+    max_artist_followers DESC
 LIMIT 10;

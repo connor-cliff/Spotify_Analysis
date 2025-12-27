@@ -16,8 +16,7 @@ the same name together.
 SELECT 
     MAX(artist_key) AS max_artist_key,
     artist_name,
-    AVG(artist_popularity) AS average_artist_popularity,
-    AVG(artist_followers) AS artist_followers 
+    MAX(artist_popularity) AS average_artist_popularity
 FROM  
     artists
 WHERE
