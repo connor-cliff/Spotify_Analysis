@@ -1,7 +1,7 @@
 # Introduction
 Exploring music popularity and artist impact using a large scale music dataset spanning multiple decades. This project focuses on identifying influential artists, understanding popularity trends over time, and analysing factors that contribute to a track’s success.
 
-Find the SQL queries here: [project_sql folder](/SQL/project_sql/)
+Find the SQL queries here: [project SQL folder](/SQL/project_sql/)
 
 ## Background
 (add data source)
