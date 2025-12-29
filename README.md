@@ -1,10 +1,8 @@
 # Introduction
 Exploring music popularity and artist impact using a large scale music dataset spanning multiple decades. This project focuses on identifying influential artists, understanding popularity trends over time, and analysing factors that contribute to a track’s success.
 
+The data used in this project is from: [Spotify Global Music Dataset](https://www.kaggle.com/datasets/wardabilal/spotify-global-music-dataset-20092025?resource=download)
 Find the SQL queries here: [project SQL folder](/SQL/project_sql/)
-
-## Background
-(add data source)
 
 ## Project Pipeline
 This project follows a simple analytics pipeline, moving from raw data extraction to cleaned analysis and visualisation.
