@@ -4,7 +4,7 @@ Exploring music popularity and artist impact using a large scale music dataset s
 ## Quick links
 The data used in this project is from: [Spotify Global Music Dataset](https://www.kaggle.com/datasets/wardabilal/spotify-global-music-dataset-20092025?resource=download)
 
-Find the SQL queries here: [project SQL folder](/SQL/project_sql/)
+Find the SQL queries here: [Project SQL folder](/SQL/project_sql/)
 
 ## Project Pipeline
 This project follows a simple analytics pipeline, moving from data extraction to analysis and visualisation.
