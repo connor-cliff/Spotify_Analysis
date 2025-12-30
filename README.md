@@ -1,5 +1,5 @@
 # Introduction
-Exploring music popularity and artist impact using a large scale music dataset spanning multiple decades. This project focuses on identifying influential artists, understanding popularity trends over time, and analysing factors that contribute to a track’s success.
+Exploring music popularity and artist impact using a large scale music dataset spanning across multiple decades. This project focuses on identifying influential artists, understanding popularity trends over time, and analysing factors that contribute to a track’s success.
 
 ## Quick links
 The data used in this project is from: [Spotify Global Music Dataset](https://www.kaggle.com/datasets/wardabilal/spotify-global-music-dataset-20092025?resource=download)
@@ -7,14 +7,27 @@ The data used in this project is from: [Spotify Global Music Dataset](https://ww
 Find the SQL queries here: [Project SQL folder](/SQL/project_sql/)
 
 ## Project Pipeline
-This project follows a simple analytics pipeline, moving from data extraction to analysis and visualisation.
+This project follows an analytics pipeline which moves from data extraction to analysis and then visualisation.
 
 ### SQL
-
+Shape the raw data into an analysis ready form.
+- Split the columns into a relational schema.
+- Standardise the fields.
+- Create foreign keys and primary keys.
+- Validate assumptions before indepth analysis.
 
 ### Excel
+Analyse the prepared dataset.
+- Explore the data using pivot tables and filters.
+- Compare factors such as track length, popularity, and explicit status.
+- Aggregate metrics withc counts, averages and medians.
+- Create charts and dashboards to present findings.
 
 ### Power BI
+Visualise insights from the analysis.
+- Create an interactive dashboard with charts.
+- Implement slicers, drill downs and filtering.
+- Present findings in an easy to digest form.
 
 ## Key Questions
 
