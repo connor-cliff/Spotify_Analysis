@@ -5,8 +5,19 @@ Exploring music popularity and artist impact using a large scale music dataset s
 The data used in this project is from: [Spotify Global Music Dataset](https://www.kaggle.com/datasets/wardabilal/spotify-global-music-dataset-20092025?resource=download)
 
 Find the SQL queries here: [Project SQL folder](/SQL/project_sql/)
+Find the Excel analysis here:
+Find the Power BI dashboard here:
 
-## Project Pipeline
+## Key Questions
+
+- Which artists have the greatest overall impact based on popularity and followers?
+- Who are the most consistently popular artists in the dataset?
+- Which artists have the largest audience reach?
+- What are the most popular tracks for each year?
+- Do tracks with featured artists perform better than solo tracks?
+- Do explicit tracks tend to perform better or worse than non explicit tracks?
+
+# Project Pipeline
 This project follows an analytics pipeline which moves from data extraction to analysis and then visualisation.
 
 ### SQL
@@ -29,14 +40,7 @@ Visualise insights from the analysis.
 - Implement slicers, drill downs and filtering.
 - Present findings in an easy to digest form.
 
-## Key Questions
-
-- Which artists have the greatest overall impact based on popularity and followers?
-- Who are the most consistently popular artists in the dataset?
-- Which artists have the largest audience reach?
-- What are the most popular tracks for each year?
-- Do tracks with featured artists perform better than solo tracks?
-- Do explicit tracks tend to perform better or worse than non explicit tracks?
+---
 
 ## Tools Used
 
@@ -55,6 +59,8 @@ Visualise insights from the analysis.
 - **Yearly Popular Tracks:** Popularity trends across decades
 - **Collaborations:** Featured vs non-featured track performance
 - **Explicit tracks:** Explicit vs non-explicit track performance
+
+---
 
 ## Visualisations
 (Add later)
