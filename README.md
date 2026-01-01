@@ -12,7 +12,7 @@ Find the Power BI dashboard here:
 
 ---
 
-## Key Questions
+# Key Questions
 
 - Which artists have the greatest overall impact based on popularity and followers?
 - Who are the most consistently popular artists in the dataset?
@@ -20,6 +20,8 @@ Find the Power BI dashboard here:
 - What are the most popular tracks for each year?
 - Do tracks with featured artists perform better than solo tracks?
 - Do explicit tracks tend to perform better or worse than non explicit tracks?
+
+---
 
 # Project Pipeline
 This project follows an analytics pipeline which moves from data extraction to analysis and then visualisation.
@@ -48,9 +50,9 @@ Visualise insights from the analysis.
 
 ---
 
-#Stage 1: Database creation and querying in SQL
+# Stage 1: Database creation and querying in SQL
 
-##Database creation and Standardisation
+## Database creation and Standardisation
 The original data for this project was split into a 2009-2023 version and a 2025 version. To allow proper analysis, it was important to standardise the raw data into a relational schema. This was achieved by firstly combining the two CSV files into a single staging table. The two files had slightly different column names, column orders and time unit which were unified.
 
 The database was created:
@@ -94,12 +96,12 @@ CREATE TABLE public.artist_genre
 );
 ```
 
-##Querying
+## Querying
 I developed queries to run on the database in order to validate my assumptions before moving on to further analysis.
 
 The following are some examples of queries I wrote but full set of queries can be found here: [Project SQL folder](/SQL/project_sql/)
 
-###Top 10 Highest Impact Artists
+### Top 10 Highest Impact Artists
 
 High impact artists are defined by those with the highest popularity score and the most followers, suggesting a large influence on the music industry. A windows function was used to preserve the integrity of each artist and avoid collapsing the results.
 
@@ -131,7 +133,7 @@ ORDER BY
 LIMIT 10; 
 ```
 
-###Most Popular Songs For Each Year
+### Most Popular Songs For Each Year
 
 This query produces a table of each year in the dataset with the corrasponding most popular track(s) for that year which can provide insights into yearly trends. This dataset contains multiple track entities which have all the same details but different popularity scores which can be explained by snapshots of the track as its popularity changes over time or re-releases of the same song. To work around this, the version of the track with the highest popularity score was selected for the results. These were then compared against the overall highest popularity score acheived by any track for each year to find the particular track(s) whos popularity score corrasponds to this value.
 
@@ -167,13 +169,13 @@ ORDER BY u.album_year DESC;
 ```
 ---
 
-#Stage 2: Excel Analysis
+# Stage 2: Excel Analysis
 
 (Add later)
 
 ---
 
-#Stage 3: Power BI Dashboard
+# Stage 3: Power BI Dashboard
 
 (Add later)
 
