@@ -1,16 +1,12 @@
 # Introduction
-Exploring music popularity and artist impact using a large scale music dataset spanning multiple decades. This project focuses on identifying influential artists, understanding popularity trends over time, and analysing factors that contribute to a track’s success.
+Exploring music popularity and artist impact using a large scale music dataset spanning across multiple decades. This project focuses on identifying influential artists, understanding popularity trends over time, and analysing factors that contribute to a track’s success.
 
-Find the SQL queries here: [project SQL folder](/SQL/project_sql/)
+## Quick links
+The data used in this project is from: [Spotify Global Music Dataset](https://www.kaggle.com/datasets/wardabilal/spotify-global-music-dataset-20092025?resource=download)
 
-## Background
-(add data source)
-
-## Project Pipeline
-This project follows a simple analytics pipeline, moving from raw data extraction to cleaned analysis and visualisation.
-- SQL:
-- Excel / Power Query:
-- Power BI:
+Find the SQL queries here: [Project SQL folder](/SQL/project_sql/)
+Find the Excel analysis here:
+Find the Power BI dashboard here:
 
 ## Key Questions
 
@@ -20,6 +16,31 @@ This project follows a simple analytics pipeline, moving from raw data extractio
 - What are the most popular tracks for each year?
 - Do tracks with featured artists perform better than solo tracks?
 - Do explicit tracks tend to perform better or worse than non explicit tracks?
+
+# Project Pipeline
+This project follows an analytics pipeline which moves from data extraction to analysis and then visualisation.
+
+### SQL
+Shape the raw data into an analysis ready form.
+- Split the columns into a relational schema.
+- Standardise the fields.
+- Create foreign keys and primary keys.
+- Validate assumptions before indepth analysis.
+
+### Excel
+Analyse the prepared dataset.
+- Explore the data using pivot tables and filters.
+- Compare factors such as track length, popularity, and explicit status.
+- Aggregate metrics withc counts, averages and medians.
+- Create charts and dashboards to present findings.
+
+### Power BI
+Visualise insights from the analysis.
+- Create an interactive dashboard with charts.
+- Implement slicers, drill downs and filtering.
+- Present findings in an easy to digest form.
+
+---
 
 ## Tools Used
 
@@ -39,6 +60,8 @@ This project follows a simple analytics pipeline, moving from raw data extractio
 - **Collaborations:** Featured vs non-featured track performance
 - **Explicit tracks:** Explicit vs non-explicit track performance
 
+---
+
 ## Visualisations
 (Add later)
 
@@ -54,5 +77,5 @@ This project follows a simple analytics pipeline, moving from raw data extractio
 
 This project strengthened my SQL abilities and provided insight into ...
 
-## Conclusion
+## Conclusions
 (Add later)
