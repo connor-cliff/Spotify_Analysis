@@ -1,5 +1,5 @@
 # Introduction
-This project aims to explore trends in the music industry by analysing Spotify music data from 1960 to the present. There will be a focus on influential artists, understanding trends and exploring factors which leads to a track's success, and much more.
+This project aims to explore trends in the music industry by analysing Spotify music data from 1960 to the present day. There will be a focus on influential artists, understanding trends and exploring factors which leads to a track's success, and much more.
 
 # Quick links
 The data used in this project is from: [Spotify Global Music Dataset](https://www.kaggle.com/datasets/wardabilal/spotify-global-music-dataset-20092025?resource=download)
