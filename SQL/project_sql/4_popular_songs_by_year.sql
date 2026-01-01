@@ -40,8 +40,7 @@ FROM unduplicated u
 JOIN yearly_max y
     ON u.album_year = y.album_year
    AND u.track_popularity = y.max_popularity
-ORDER BY u.album_year DESC
-LIMIT 100;
+ORDER BY u.album_year DESC;
 
 /*
 Summary:
