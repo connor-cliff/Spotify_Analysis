@@ -53,7 +53,7 @@ Visualise insights from the analysis.
 # Stage 1: Database creation and querying in SQL
 
 ## Database creation and Standardisation
-The original data for this project was split into a 2009-2023 version and a 2025 version. To allow proper analysis, it was important to standardise the raw data into a relational schema. This was achieved by firstly combining the two CSV files into a single staging table. The two files had slightly different column names, column orders and time unit which were unified.
+The original data for this project was split into a 2009-2023 version and a 2025 version. To allow proper analysis, it was important to standardise the raw data into a relational schema. This was achieved by firstly combining the two CSV files to get the most data and load them into a single staging table . The two files had slightly different column names, column orders and time unit which were unified.
 
 The database was created:
 
@@ -94,6 +94,21 @@ CREATE TABLE public.artist_genre
         FOREIGN KEY (genre_key) 
             REFERENCES public.genres (genre_key)
 );
+```
+
+Data was loaded into the database:
+```SQL
+INSERT INTO albums (album_id, artist_key, album_name, album_release_date, album_total_tracks, album_type)
+SELECT 
+    s.album_id, 
+    a.artist_key,
+    s.album_name, 
+    TO_DATE(s.album_release_date, 'YYYY MM DD'), 
+    CAST(s.album_total_tracks AS INT), 
+    s.album_type
+FROM staging.staging_spotify_raw s
+INNER JOIN public.artists a
+    ON s.artist_name = a.artist_name;
 ```
 
 ## Querying
