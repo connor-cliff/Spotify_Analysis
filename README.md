@@ -61,7 +61,7 @@ The database was created:
 CREATE DATABASE spotify_analysis;
 ```
 
-Primary and foreign keys were added to tables for proper data warehousing while the original Spotify keys were kept:
+Tables were created for each entity such as artists, albums, tracks and genre. Primary and foreign keys were added to tables for proper data warehousing while the original Spotify keys were kept:
 ```sql
 CREATE TABLE public.albums
 (
