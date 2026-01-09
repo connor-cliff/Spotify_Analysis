@@ -190,7 +190,7 @@ ORDER BY u.album_year DESC;
 ## Power Query
 
 ### Extract
-I used Power Query to combine & load the data from the two csv datasets and created the query: spotify_data_original.
+I used Power Query to combine & load the data from the two csv datasets and created the query: `spotify_data_original`
 
 ### Transform
 I then had to ensure that both datasets followed the same format because one used milliseconds for track duration and the other used minutes. I firstly used the following formula to list all column names from both files and renamed it to 'PreExpand':
@@ -199,7 +199,7 @@ I then had to ensure that both datasets followed the same format because one use
 = List.Union(List.Transform(PreExpand[Transform File], each Table.ColumnNames(_) ) ) 
 ```
 
-This allowed me to expand the track_duration_ms and track_duration_min columns so that I could convert the millisecond column into minutes and merge the two columns together. I then performs further basic Power Query cleanup which left me with this query:
+This allowed me to expand the `track_duration_ms` and `track_duration_min` columns so that I could convert the millisecond column into minutes and merge the two columns together. I then performs further basic Power Query cleanup which left me with this query:
 
 <img width="245" height="474" alt="image" src="https://github.com/user-attachments/assets/631ca504-13ab-4730-a4ef-8411f82a8e09" />
 
@@ -207,9 +207,14 @@ Since I had combined two datasets to get the most up to date data, I was left wi
 
 <img width="242" height="195" alt="image" src="https://github.com/user-attachments/assets/7ff1c953-00a2-4664-90bb-4ce5929e3dfd" />
 
-Three new queries were then created for each entity by referencing spotify_data_new: fact_track, dim_artist and dim_genre.
+Three new queries were then created for each entity by referencing `spotify_data_new`: `fact_track`, `dim_artist` and `dim_genre`.
 
-Duplicates were removed from both dimension tables. The version of the artists which were kept were those with the highest followers count and popularity score to represent the most recent version of the artists. Lastly, index columns were assigned to dimension tables and these merged with the fact table to allow for the creation of relationships down the line. These queries can be seen here: 
+Notable transformations which took place at this stage:
+- A `has_feature` column was added to fact_track to allow for selective analysis of tracks with featured artists.
+- Duplicates were removed from both dimension tables. The version of the artists which were kept were those with the highest followers count and popularity score to represent the most recent and best version of the artists. 
+- Index columns were assigned to dimension tables and these merged with the fact table to allow for the creation of relationships down the line.
+
+These queries can be seen here: 
 
 <img width="243" height="309" alt="image" src="https://github.com/user-attachments/assets/8574f523-0846-435d-aaa2-0d1566ca432b" /> 
 <img width="243" height="334" alt="image" src="https://github.com/user-attachments/assets/5125d946-3309-458d-9011-df9acb0d5886" />
@@ -217,7 +222,7 @@ Duplicates were removed from both dimension tables. The version of the artists w
 
 ### Load
 
-Finally, I loaded the queries into the workbook to set the foundation for subseequent analysis.
+Finally, I loaded the queries into the workbook to set the foundation for subsequent analysis.
 
 - fact_track
 <img width="1898" height="366" alt="image" src="https://github.com/user-attachments/assets/ac31eea4-b471-4225-8fa8-30b80c462bfb" />
@@ -230,6 +235,9 @@ Finally, I loaded the queries into the workbook to set the foundation for subsee
 
 
 ## Power Pivot
+I created a data model by integrating the `fact_track`, `dim_artist` and `dim_genre` tables into one model. A date table was added so that time based analysis could be performed. One-to-many relationships were created between the tables:
+<img width="936" height="419" alt="image" src="https://github.com/user-attachments/assets/5b6e8178-a8cf-48bf-958b-05f1de39a70a" />
+
 
 ---
 
