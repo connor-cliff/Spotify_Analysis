@@ -37,10 +37,11 @@ Shape the raw data into an analysis ready form.
 
 ## Excel
 Analyse the prepared dataset.
+- Perform ETL on the dataset.
 - Explore the data using pivot tables and filters.
-- Compare factors such as track length, popularity, and explicit status.
-- Aggregate metrics withc counts, averages and medians.
-- Create charts and dashboards to present findings.
+- Compare factors across tracks, artists and albums
+- Aggregate metrics with counts, averages and medians.
+- Create charts to understand patterns.
 
 ## Power BI
 Visualise insights from the analysis.
@@ -186,7 +187,28 @@ ORDER BY u.album_year DESC;
 
 # Stage 2: Excel Analysis
 
-(Add later)
+## Power Query
+
+### Extract
+I used Power Query to combine & load the data from the two csv datasets and created the query: spotify_data_original.
+
+### Transform
+I then had to ensure that both datasets followed the same format because one used milliseconds for track duration and the other used minutes. I firstly used the following formula to list all column names from both files and renamed it to 'PreExpand':
+
+``` M
+= List.Union(List.Transform(PreExpand[Transform File], each Table.ColumnNames(_) ) ) 
+```
+
+This allowed me to expand the track_duration_ms and track_duration_min columns so that I could convert the millisecond column into minutes and merge the two columns together. I then performs further basic Power Query cleanup which left me with this query:
+
+<img width="245" height="474" alt="image" src="https://github.com/user-attachments/assets/631ca504-13ab-4730-a4ef-8411f82a8e09" />
+
+Since I had combined two datasets to get the most up to date data, I was left with a table which had many duplicates. I wanted to preserve the original full data set so I delt with duplicates in a second query. I also reduced artist genres down to one primary genre to allow for better analysis:
+
+<img width="242" height="195" alt="image" src="https://github.com/user-attachments/assets/7ff1c953-00a2-4664-90bb-4ce5929e3dfd" />
+
+
+### Load
 
 ---
 
