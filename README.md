@@ -203,12 +203,33 @@ This allowed me to expand the track_duration_ms and track_duration_min columns s
 
 <img width="245" height="474" alt="image" src="https://github.com/user-attachments/assets/631ca504-13ab-4730-a4ef-8411f82a8e09" />
 
-Since I had combined two datasets to get the most up to date data, I was left with a table which had many duplicates. I wanted to preserve the original full data set so I delt with duplicates in a second query. I also reduced artist genres down to one primary genre to allow for better analysis:
+Since I had combined two datasets to get the most up to date data, I was left with a table which had many duplicates. I wanted to preserve the original full data set so I delt with duplicates in a second query. I also reduced artist genres down to one primary genre to allow for the creation of a star schema. This decision was made to enable the creation of one-to-many relationships instead of many-to-many relationships which would have introduced unnessesary complexity to the model.
 
 <img width="242" height="195" alt="image" src="https://github.com/user-attachments/assets/7ff1c953-00a2-4664-90bb-4ce5929e3dfd" />
 
+Three new queries were then created for each entity by referencing spotify_data_new: fact_track, dim_artist and dim_genre.
+
+Duplicates were removed from both dimension tables. The version of the artists which were kept were those with the highest followers count and popularity score to represent the most recent version of the artists. Lastly, index columns were assigned to dimension tables and these merged with the fact table to allow for the creation of relationships down the line. These queries can be seen here: 
+
+<img width="243" height="309" alt="image" src="https://github.com/user-attachments/assets/8574f523-0846-435d-aaa2-0d1566ca432b" /> 
+<img width="243" height="334" alt="image" src="https://github.com/user-attachments/assets/5125d946-3309-458d-9011-df9acb0d5886" />
+<img width="243" height="297" alt="image" src="https://github.com/user-attachments/assets/aa87364d-9ee6-4a73-9e77-5050feaf34c0" />
 
 ### Load
+
+Finally, I loaded the queries into the workbook to set the foundation for subseequent analysis.
+
+- fact_track
+<img width="1898" height="366" alt="image" src="https://github.com/user-attachments/assets/ac31eea4-b471-4225-8fa8-30b80c462bfb" />
+
+- dim_artist
+<img width="1895" height="389" alt="image" src="https://github.com/user-attachments/assets/f88f1a56-b632-470e-84ab-2cd75ea6a172" />
+
+- dim_album
+<img width="1898" height="354" alt="image" src="https://github.com/user-attachments/assets/95b5ebfc-3b4a-4704-b1c6-c87f561fd6f1" />
+
+
+## Power Pivot
 
 ---
 
