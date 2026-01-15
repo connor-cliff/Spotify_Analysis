@@ -7,7 +7,7 @@ The data used in this project is from: [Spotify Global Music Dataset](https://ww
 Find the SQL queries here: [Project SQL folder](/SQL/project_sql/)
 
 Find the Excel analysis here:
-
+ 
 Find the Power BI dashboard here:
 
 ---  
