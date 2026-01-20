@@ -8,7 +8,7 @@ Find the SQL queries here: [Project SQL folder](/SQL/project_sql/)
 
 Find the Excel analysis here:
  
-Find the Power BI dashboard here:
+Find the Power BI dashboard here: 
 
 ---  
  
