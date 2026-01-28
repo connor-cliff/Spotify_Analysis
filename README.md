@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="Resources/video.gif" width="900">
+</p>
+
 # Introduction
 This project aims to explore trends in the music industry by analysing Spotify music data from 1960 to the present day. There will be a focus on influential artists, understanding trends and exploring factors which leads to a track's success, and much more.
  
