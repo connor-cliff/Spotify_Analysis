@@ -110,6 +110,10 @@ ORDER BY u.album_year DESC;
 - Created fact and dimension tables for modelling.
 - Built relationships in Power Pivot for structured analysis.
 
+## Star Schema Data Model
+<img width="936" height="419" alt="image" src="https://github.com/user-attachments/assets/5b6e8178-a8cf-48bf-958b-05f1de39a70a" />
+
+
 # Power BI
 
 **Goal: ** Understand how artist reach, track characteristics and timing relate to popularity in order to identify patterns behind music performance.
