@@ -111,36 +111,15 @@ ORDER BY u.album_year DESC;
 
 # Power BI
 
-**Goal: ** Design a dashboard for stakeholders to easily visualise factors influencing a tracks success.
+**Goal: ** Understand how artist reach, track characteristics and timing relate to popularity in order to identify patterns behind music performance.
 
-- 
+**Functionality**
+- Explore artist performance, track popularity and trends over time using filters, slicers and drill downs.
+- Compare individual artists and tracks to assess which factors are associated with stronger performance.
+- Examine how collaborations and explicit status relate to popularity outcomes.
+- Identify when highly popular tracks tend to be released to inform release timing.
 
 
-
----
-
-## SQL
-Shape the raw data into an analysis ready form.
-- Host a database in pgAdmin and connect it to VSCode.
-- Link project files to GitHub for version control.
-- Split the columns into a relational schema.
-- Standardise the fields.
-- Create foreign keys and primary keys.
-- Validate assumptions before indepth analysis.
-
-## Excel
-Analyse the prepared dataset.
-- Perform ETL on the dataset.
-- Explore the data using pivot tables and filters.
-- Compare factors across tracks, artists and albums
-- Aggregate metrics with counts, averages and medians.
-- Create charts to understand patterns.
-
-## Power BI
-Visualise insights from the analysis.
-- Create an interactive dashboard with charts.
-- Implement slicers, drill downs and filtering.
-- Present findings in an easy to digest form.
 
 ---
 
