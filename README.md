@@ -1,6 +1,6 @@
 # Summary
 This project analyses Spotify music data to identify patterns behind artist popularity and track success.
-<img width="1898" height="366" alt="image" src="https://github.com/user-attachments/assets/ac31eea4-b471-4225-8fa8-30b80c462bfb" />
+
 ## Key Findings
 
 - Tracks featuring additional artists have higher average popularity (59) than solo tracks (51), suggesting collaborations are associated with increased reach.
