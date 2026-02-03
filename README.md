@@ -14,6 +14,13 @@ This project analyses Spotify music data to identify patterns behind artist popu
 <p align="center">
   <img src="Resources/video.gif" width="1000">
 </p>
+
+# Business Questions
+ 
+- What characteristics appear in high performing tracks?
+- Are featured tracks more successful than solo releases?
+- Does the artists popularity correlate with the tracks popularity?
+- How does track popularity vary by release day?
  
 # Quick links
 The data used in this project is from: [Spotify Global Music Dataset](https://www.kaggle.com/datasets/wardabilal/spotify-global-music-dataset-20092025?resource=download)
@@ -23,13 +30,6 @@ Find the SQL queries here: [Project SQL folder](/SQL/project_sql/)
 Find the Excel analysis here: [Excel folder](/Excel/)
  
 Find the Power BI dashboard here: [Track Analysis Dashboard](https://app.powerbi.com/links/KlMuJSW2Ic?ctid=e11b3463-1afc-40f2-94ae-ed3f2c1f4880&pbi_source=linkShare&bookmarkGuid=e88ab947-4640-4ebd-a059-0672df8f634d)
- 
-# Business Questions
- 
-- What characteristics appear in high performing tracks?
-- Are featured tracks more successful than solo releases?
-- Does the artists popularity correlate with the tracks popularity?
-- How does track popularity vary by release day?
 
 # Approach
 Data was extracted and standardised in SQL, analysed in Excel, and visualised in Power BI.
@@ -118,7 +118,7 @@ ORDER BY u.album_year DESC;
 - Built relationships in Power Pivot for structured analysis.
 
 ### Star Schema Data Model
-A star schema was used to separate fact and dimension tables. This improves aggregation performance and supports flexible filtering in Power BI.
+A star schema was used to separate fact and dimension tables, supporting flexible filtering in Power BI.
 <img width="936" height="419" alt="image" src="https://github.com/user-attachments/assets/5b6e8178-a8cf-48bf-958b-05f1de39a70a" />
 
 # Power BI
@@ -135,14 +135,54 @@ A star schema was used to separate fact and dimension tables. This improves aggr
 
 ## Technical Implementation
 
+### SQL
+
+**Key technical work:**
+
+- Combined multiple raw CSV sources with inconsistent column naming and time units into a unified staging table.
+- Designed a relational schema separating artists, albums, tracks and genres.
+- Implemented primary and foreign keys to maintain data integrity.
+- Built bridge tables to support many-to-many genre relationships.
+- Used window functions to deduplicate artist and track records while preserving snapshots of highest popularity artist examples.
+- Wrote aggregation and ranking queries to validate assumptions prior to BI analysis.
+
+**Example techniques used**
+
+- CTEs
+- Subqueries
+- Window functions
+- Joins
+- Grouping
+- Aggregation
+
+### Excel Data Modelling (Power Query & Power Pivot)
+
+**Key technical work:**
+
+- Merged datasets with different structures and standardised duration units.
+- Built transformation logic in Power Query to clean, deduplicate and reshape data.
+- Created columns such as has_feature to allow for selective analysis fo tracks.
+- Reduced genre complexity to allow for a star schema design.
+- Created fact and dimension tables for structured modelling.
+
+**Data modelling**
+
+- Implemented a star schema in Power Pivot.
+- Created relationships between fact_track and dimension tables.
+- Added a date table for time based analysis.
 
 ---
 
 ## Limitations & Assumptions
-(Add later)
 
-## Notes
-Popularity in this dataset is defined by...
+**Artist imbalance**
+Some artists appear far more frequently than others in the dataset. This can skew averages and trends, meaning results may reflect a few high volume artists more than the wider industry.
+
+**Duplicate records and snapshots**
+Many artists and tracks appear multiple times, likely due to periodic data snapshots or rereleases. For example, Taylor Swift appears 1296 times. To manage this, the artist record with the highest follower count was kept as the most recent representation. This may not perfectly reflect historical values but provides a consistent version per artist.
+
+**Genre coverage gaps**
+Only around half of artists have genre information assigned. Any genre based insights are therefore based on a partial subset of the data and may not represent the full dataset.
 
 ## Conclusions
 (Add later)
