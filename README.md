@@ -1,26 +1,6 @@
 # Summary
 This project analyses Spotify music data to identify patterns behind artist popularity and track success.
 
-<img width="242" height="195" alt="image" src="https://github.com/user-attachments/assets/7ff1c953-00a2-4664-90bb-4ce5929e3dfd" />
-
-<img width="243" height="309" alt="image" src="https://github.com/user-attachments/assets/8574f523-0846-435d-aaa2-0d1566ca432b" /> 
-<img width="243" height="334" alt="image" src="https://github.com/user-attachments/assets/5125d946-3309-458d-9011-df9acb0d5886" />
-<img width="243" height="297" alt="image" src="https://github.com/user-attachments/assets/aa87364d-9ee6-4a73-9e77-5050feaf34c0" />
-
-
-- fact_track
-<img width="1898" height="366" alt="image" src="https://github.com/user-attachments/assets/ac31eea4-b471-4225-8fa8-30b80c462bfb" />
-
-- dim_artist
-<img width="1895" height="389" alt="image" src="https://github.com/user-attachments/assets/f88f1a56-b632-470e-84ab-2cd75ea6a172" />
-
-- dim_album
-<img width="1898" height="354" alt="image" src="https://github.com/user-attachments/assets/95b5ebfc-3b4a-4704-b1c6-c87f561fd6f1" />
-
-<img width="936" height="419" alt="image" src="https://github.com/user-attachments/assets/5b6e8178-a8cf-48bf-958b-05f1de39a70a" />
-
-
-
 ## Key Findings
 
 - Tracks featuring additional artists have higher average popularity (59) than solo tracks (51), suggesting collaborations are associated with increased reach.
