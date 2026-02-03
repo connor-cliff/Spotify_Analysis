@@ -1,6 +1,13 @@
 # Summary
 This project analyses Spotify music data to identify patterns behind artist popularity and track success.
 
+# Business Questions
+ 
+- What characteristics appear in high performing tracks?
+- Are featured tracks more successful than solo releases?
+- Does the artists popularity correlate with the tracks popularity?
+- How does track popularity vary by release day?
+
 ## Key Findings
 
 - Tracks featuring additional artists have higher average popularity (59) than solo tracks (51), suggesting collaborations are associated with increased reach.
@@ -15,13 +22,6 @@ This project analyses Spotify music data to identify patterns behind artist popu
 <p align="center">
   <img src="Resources/video.gif" width="1000">
 </p>
-
-# Business Questions
- 
-- What characteristics appear in high performing tracks?
-- Are featured tracks more successful than solo releases?
-- Does the artists popularity correlate with the tracks popularity?
-- How does track popularity vary by release day?
  
 # Quick links
 The data used in this project is from: [Spotify Global Music Dataset](https://www.kaggle.com/datasets/wardabilal/spotify-global-music-dataset-20092025?resource=download)
@@ -34,6 +34,16 @@ Find the Power BI dashboard here: [Track Analysis Dashboard](https://app.powerbi
 
 # Approach
 Data was extracted and standardised in SQL, analysed in Excel, and visualised in Power BI.
+
+# Power BI
+
+**Goal:** Design a dashboard to allow non-technical users to explore trends and compare artist and track performance without writing queries.
+
+**Functionality**
+- Explore artist performance, track popularity and trends over time using filters, slicers and drill downs.
+- Compare individual artists and tracks to assess which factors are associated with stronger performance.
+- Examine how collaborations and explicit status relate to popularity outcomes.
+- Identify when highly popular tracks tend to be released to inform release timing.
 
 ## SQL Data Preparation
 The dataset contained 7912 tracks, 2470 artists and 4868 albums which requied a relational schema design to avoid duplications and allow efficient querying.
@@ -121,16 +131,6 @@ ORDER BY u.album_year DESC;
 ### Star Schema Data Model
 A star schema was used to separate fact and dimension tables, supporting flexible filtering in Power BI.
 <img width="936" height="419" alt="image" src="https://github.com/user-attachments/assets/5b6e8178-a8cf-48bf-958b-05f1de39a70a" />
-
-# Power BI
-
-**Goal:** Design a dashboard to allow non-technical users to explore trends and compare artist and track performance without writing queries.
-
-**Functionality**
-- Explore artist performance, track popularity and trends over time using filters, slicers and drill downs.
-- Compare individual artists and tracks to assess which factors are associated with stronger performance.
-- Examine how collaborations and explicit status relate to popularity outcomes.
-- Identify when highly popular tracks tend to be released to inform release timing.
 
 ---
 
