@@ -22,6 +22,8 @@ This project analyses Spotify music data to identify patterns behind artist popu
 <p align="center">
   <img src="Resources/video.gif" width="1000">
 </p>
+
+---
  
 # Quick links
 The data used in this project is from: [Spotify Global Music Dataset](https://www.kaggle.com/datasets/wardabilal/spotify-global-music-dataset-20092025?resource=download)
@@ -31,6 +33,8 @@ Find the SQL queries here: [Project SQL folder](/SQL/project_sql/)
 Find the Excel analysis here: [Excel folder](/Excel/)
  
 Find the Power BI dashboard here: [Track Analysis Dashboard](https://app.powerbi.com/links/KlMuJSW2Ic?ctid=e11b3463-1afc-40f2-94ae-ed3f2c1f4880&pbi_source=linkShare&bookmarkGuid=e88ab947-4640-4ebd-a059-0672df8f634d)
+
+---
 
 # Approach
 Data was extracted and standardised in SQL, analysed in Excel, and visualised in Power BI.
@@ -186,4 +190,4 @@ Many artists and tracks appear multiple times, likely due to periodic data snaps
 Only around half of artists have genre information assigned. Any genre based insights are therefore based on a partial subset of the data and may not represent the full dataset.
 
 ## Conclusions
-(Add later)
+Tracks with featured artists, explicit content, and standard albums tend to be more popular, while track duration and release day show moderate effects. Larger artists consistently achieve higher average popularity, but track characteristics still matter. This project demonstrates how messy, real world data can be transformed and analysed to generate actionable insights.
