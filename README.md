@@ -22,8 +22,6 @@ This project analyses Spotify music data to identify patterns behind artist popu
 <p align="center">
   <img src="Resources/video.gif" width="1000">
 </p>
-
----
  
 # Quick links
 The data used in this project is from: [Spotify Global Music Dataset](https://www.kaggle.com/datasets/wardabilal/spotify-global-music-dataset-20092025?resource=download)
