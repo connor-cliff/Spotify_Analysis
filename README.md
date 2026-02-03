@@ -9,7 +9,8 @@ This project analyses Spotify music data to identify patterns behind artist popu
 - Artist scale strongly relates to performance, with all artists above 50M followers averaging track popularity above 50.
 - Although most tracks are released on Fridays, tracks released on Sundays and Mondays show similar average popularity despite lower release volume.
 - Popularity increases with track duration up to around five minutes, after which no consistent trend is observed.
-  
+
+## Dashboard Demonstration
 
 <p align="center">
   <img src="Resources/video.gif" width="1000">
