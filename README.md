@@ -3,7 +3,12 @@ This project analyses Spotify music data to identify patterns behind artist popu
 
 ## Key Findings
 
-- (to add)
+- Tracks featuring additional artists have higher average popularity (59) than solo tracks (51), suggesting collaborations are associated with increased reach.
+- Explicit tracks show higher average popularity (58) compared to non-explicit tracks (50).
+- Average popularity of tracks from standard albums (55) outperform singles (46) and compilations (40).
+- Artist scale strongly relates to performance, with all artists above 50M followers averaging track popularity above 50.
+- Although most tracks are released on Fridays, tracks released on Sundays and Mondays show similar average popularity despite lower release volume.
+- Popularity increases with track duration up to around five minutes, after which no consistent trend is observed.
   
 
 <p align="center">
@@ -24,13 +29,13 @@ Find the Power BI dashboard here: [Track Analysis Dashboard](https://app.powerbi
 - What characteristics appear in high performing tracks?
 - Are featured tracks more successful than solo releases?
 - Does the artists popularity correlate with the tracks popularity?
-- When is the best time to release a new track?
-- How should you position tracks within an album?
+- How does track popularity vary by release day?
 
 # Approach
 Data was extracted and standardised in SQL, analysed in Excel, and visualised in Power BI.
 
 ## SQL Data Preparation
+The dataset contained 7912 tracks, 2470 artists and 4868 albums which requied a relational schema design to avoid duplications and allow efficient querying.
 
 **Goal:** Convert raw Spotify data into an analysis ready relational schema.
 
@@ -40,6 +45,7 @@ Data was extracted and standardised in SQL, analysed in Excel, and visualised in
 - Queried the data to validate assumptions before indepth analysis.
 
 ### Top 10 Highest Impact Artists
+Returns the top 10 artists ranked by highest popularity and follower count.
 
 ```sql
 SELECT
@@ -69,6 +75,7 @@ LIMIT 10;
 ```
 
 ### Most Popular Songs For Each Year
+Returns each year in the dataset with the highest rated track(s) for that year.
 
 ```sql
 WITH unduplicated AS (
@@ -111,17 +118,23 @@ ORDER BY u.album_year DESC;
 - Built relationships in Power Pivot for structured analysis.
 
 ### Star Schema Data Model
+A star schema was used to separate fact and dimension tables. This improves aggregation performance and supports flexible filtering in Power BI.
 <img width="936" height="419" alt="image" src="https://github.com/user-attachments/assets/5b6e8178-a8cf-48bf-958b-05f1de39a70a" />
 
 # Power BI
 
-**Goal: ** Understand how artist reach, track characteristics and timing relate to popularity in order to identify patterns behind music performance.
+**Goal:** Design a dashboard to allow non-technical users to explore trends and compare artist and track performance without writing queries.
 
 **Functionality**
 - Explore artist performance, track popularity and trends over time using filters, slicers and drill downs.
 - Compare individual artists and tracks to assess which factors are associated with stronger performance.
 - Examine how collaborations and explicit status relate to popularity outcomes.
 - Identify when highly popular tracks tend to be released to inform release timing.
+
+---
+
+## Technical Implementation
+
 
 ---
 
