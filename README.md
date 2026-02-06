@@ -8,7 +8,7 @@ This project analyses Spotify music data to identify patterns behind artist popu
 - Does the artists popularity correlate with the tracks popularity?
 - How does track popularity vary by release day?
 
-# Key Findings
+# Key Findings 
 
 - Tracks featuring additional artists have higher average popularity (59) than solo tracks (51), suggesting collaborations are associated with increased reach.
 - Explicit tracks show higher average popularity (58) compared to non-explicit tracks (50).
