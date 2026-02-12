@@ -1,7 +1,7 @@
 # Summary
 This project analyses Spotify music data to identify patterns behind artist popularity and track success.
 
-# Business Questions
+# Key Questions
  
 - What characteristics appear in high performing tracks?
 - Are featured tracks more successful than solo releases?
