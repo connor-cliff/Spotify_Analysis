@@ -6,7 +6,7 @@ This project analyses Spotify music data to identify patterns behind artist popu
 - What characteristics appear in high performing tracks?
 - Are featured tracks more successful than solo releases?
 - Does the artists popularity correlate with the tracks popularity?
-- How does track popularity vary by release day?
+- How does track popularity vary by release day? 
 
 # Key Findings 
 
