@@ -179,12 +179,15 @@ A star schema was used to separate fact and dimension tables, supporting flexibl
 ## Limitations & Assumptions
 
 **Artist imbalance**
+
 Some artists appear far more frequently than others in the dataset. This can skew averages and trends, meaning results may reflect a few high volume artists more than the wider industry.
 
 **Duplicate records and snapshots**
+
 Many artists and tracks appear multiple times, likely due to periodic data snapshots or rereleases. For example, Taylor Swift appears 1296 times. To manage this, the artist record with the highest follower count was kept as the most recent representation. This may not perfectly reflect historical values but provides a consistent version per artist.
 
 **Genre coverage gaps**
+
 Only around half of artists have genre information assigned. Any genre based insights are therefore based on a partial subset of the data and may not represent the full dataset.
 
 ## Conclusions
