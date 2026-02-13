@@ -17,7 +17,7 @@ This project analyses Spotify music data to identify patterns behind artist popu
 - Although most tracks are released on Fridays, tracks released on Sundays and Mondays show similar average popularity despite lower release volume.
 - Popularity increases with track duration up to around five minutes, after which no consistent trend is observed. 
 
-# Dashboard Demonstration
+# Dashboard Demonstration 
 
 <p align="center">
   <img src="Resources/video.gif" width="1000">
