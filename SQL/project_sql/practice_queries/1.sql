@@ -2,7 +2,7 @@
 --Q1
 SELECT ROUND(AVG(track_popularity), 2)
 FROM tracks
-
+ 
 --Q2
 SELECT
     CASE
