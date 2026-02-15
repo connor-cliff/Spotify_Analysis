@@ -1,0 +1,4 @@
+key,name,is_explicit,length_min
+1,booya,TRUE,2.2
+2,hihi,FALSE,1.85
+3,namey,TRUE,3.99
