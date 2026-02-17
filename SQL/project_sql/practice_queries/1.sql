@@ -79,8 +79,7 @@ HAVING AVG(track_popularity) > (SELECT avg(track_popularity)
                                 FROM tracks)
 
 --Q10
--- count number of explicit and non explicit per artist and only return those who are >0 for both
---first, count explict tracks per artsit
+
 WITH count_of_explicit_type AS(
 SELECT artist_name, 
 SUM(CASE WHEN tracks.is_explicit = TRUE THEN 1 ELSE 0 END) AS explicit_count,
@@ -97,3 +96,40 @@ FROM count_of_explicit_type
 WHERE explicit_count > 0 AND not_explicit_count > 0
 ORDER BY artist_name
 LIMIT 100
+
+--Q11
+SELECT artists.artist_name, MAX(track_duration_min) AS longest_track
+FROM tracks
+LEFT JOIN albums ON albums.album_key = tracks.album_key
+LEFT JOIN artists ON artists.artist_key = albums.artist_key
+--WHERE artists.artist_name = 'Pink Floyd'
+GROUP BY artists.artist_name
+ORDER BY artist_name ASC;
+
+--Q12
+SELECT EXTRACT(year FROM album_release_date) AS year, 
+SUM(
+    CASE WHEN EXTRACT(year FROM album_release_date) = 
+    EXTRACT(year FROM album_release_date) THEN 1 ELSE 0 END) 
+    AS track_count
+FROM albums
+GROUP BY year
+ORDER BY year DESC;
+
+--Q13
+WITH albums_dataset_tracks AS (
+SELECT album_name,
+SUM( CASE WHEN tracks.album_key = albums.album_key THEN 1 ELSE 0 END) AS dataset_track_count
+FROM albums
+LEFT JOIN tracks ON tracks.album_key = albums.album_key
+GROUP BY album_name
+-- HAVING album_total_tracks <> SUM( CASE WHEN tracks.album_key = albums.album_key THEN 1 ELSE 0 END)
+)
+
+SELECT album_name
+FROM albums_dataset_tracks
+WHERE albums_dataset_tracks <> (
+    SELECT MAX(album_total_tracks) AS album_total_tracks
+    FROM albums
+    GROUP BY album_name
+)
