@@ -133,3 +133,11 @@ WHERE albums_dataset_tracks <> (
     FROM albums
     GROUP BY album_name
 )
+
+
+--14 find dupes
+select track_id, 
+SUM(CASe WHEN track_id = track_id THEN 1 ELSE 0 END) AS track_dupe_count
+FROM tracks
+GROUP BY track_id
+LIMIT 100
